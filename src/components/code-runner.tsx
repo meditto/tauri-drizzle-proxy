@@ -3,7 +3,7 @@ import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
 import "../styles/code-runner.css";
 
-export interface CodeRunnerProps {
+interface CodeRunnerProps {
 	title: string;
 	code: string;
 	onRun: () => Promise<string>;
