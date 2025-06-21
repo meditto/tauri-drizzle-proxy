@@ -14,15 +14,15 @@ const users = [
 				content: "This is the content of the first post.",
 				comments: [
 					{
-						content: "Great post!",
+						content: "Great post!"
 					},
 					{
-						content: "Thanks for sharing!",
-					},
-				],
-			},
-		],
-	},
+						content: "Thanks for sharing!"
+					}
+				]
+			}
+		]
+	}
 ];
 export default async function seed() {
 	// @ts-ignore
@@ -34,11 +34,11 @@ export default async function seed() {
 				name: user.name,
 				email: user.email,
 				age: user.age,
-				city: user.city,
+				city: user.city
 			})
 			.returning();
 		console.log(
-			`Inserted user: ${insertedUser.name} with ID: ${insertedUser.id}`,
+			`Inserted user: ${insertedUser.name} with ID: ${insertedUser.id}`
 		);
 
 		for (const post of user.posts) {
@@ -47,7 +47,7 @@ export default async function seed() {
 				.values({
 					title: post.title,
 					content: post.content,
-					user_id: insertedUser.id,
+					user_id: insertedUser.id
 				})
 				.returning();
 
@@ -55,7 +55,7 @@ export default async function seed() {
 				await db.insert(schema.comment).values({
 					content: comment.content,
 					user_id: insertedUser.id,
-					post_id: insertedPost.id,
+					post_id: insertedPost.id
 				});
 			}
 		}

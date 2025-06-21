@@ -21,23 +21,22 @@ author: true
 });`;
 
 function App() {
-
 	async function runUserQuery() {
 		const user = await db.query.user.findFirst({
 			with: {
 				posts: {
 					with: {
-						comments: true,
-					},
-				},
-			},
+						comments: true
+					}
+				}
+			}
 		});
 		return JSON.stringify(user, null, 2);
 	}
 
 	async function runPostQuery() {
 		const posts = await db.query.post.findMany({
-			with: { author: true },
+			with: { author: true }
 		});
 		return JSON.stringify(posts, null, 2);
 	}

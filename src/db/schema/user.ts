@@ -11,12 +11,12 @@ const user = sqliteTable("user", {
 	city: text("city").default("NULL"),
 
 	created_at: text("created_at").default(sql`CURRENT_TIMESTAMP`),
-	updated_at: text("updated_at").default(sql`CURRENT_TIMESTAMP`),
+	updated_at: text("updated_at").default(sql`CURRENT_TIMESTAMP`)
 });
 
 export const userRelations = relations(user, ({ many }) => ({
 	posts: many(post),
-	comments: many(comment),
+	comments: many(comment)
 }));
 
 export default user;

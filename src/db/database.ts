@@ -10,7 +10,7 @@ const db = drizzle(
 	async (sql, params, method) => {
 		try {
 			const rows = await invoke<Row[]>("run_sql", {
-				query: { sql, params },
+				query: { sql, params }
 			});
 			if (rows.length === 0 && method === "get") {
 				/**
@@ -33,8 +33,8 @@ const db = drizzle(
 	},
 	{
 		schema,
-		logger: true,
-	},
+		logger: true
+	}
 );
 
 export default db;

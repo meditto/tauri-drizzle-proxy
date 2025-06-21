@@ -13,15 +13,15 @@ const post = sqliteTable("post", {
 		.references(() => user.id, { onDelete: "cascade" }),
 
 	created_at: text("created_at").default(sql`CURRENT_TIMESTAMP`),
-	updated_at: text("updated_at").default(sql`CURRENT_TIMESTAMP`),
+	updated_at: text("updated_at").default(sql`CURRENT_TIMESTAMP`)
 });
 
 export const postRelations = relations(post, ({ one, many }) => ({
 	author: one(user, {
 		fields: [post.user_id],
-		references: [user.id],
+		references: [user.id]
 	}),
-	comments: many(comment),
+	comments: many(comment)
 }));
 
 export default post;
