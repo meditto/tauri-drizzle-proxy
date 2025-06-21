@@ -4,22 +4,23 @@ import { CodeRunner } from "@/components/code-runner";
 import db from "@/db/database";
 import seed from "@/db/seed";
 
-function App() {
-	const userQueryCode = `const user = await db.query.user.findFirst({
-	with: { 
-		posts: {
-			with: { 
-				comments: true
-			}
+const userQueryCode = `const user = await db.query.user.findFirst({
+with: { 
+	posts: {
+		with: { 
+			comments: true
 		}
-	},
+	}
+},
 });`;
 
-	const postQueryCode = `const posts = await db.query.post.findMany({
-  with: {
-    author: true
-  }
+const postQueryCode = `const posts = await db.query.post.findMany({
+with: {
+author: true
+}
 });`;
+
+function App() {
 
 	async function runUserQuery() {
 		const user = await db.query.user.findFirst({
