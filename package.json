@@ -1,0 +1,39 @@
+{
+	"name": "tauri-drizzle-proxy",
+	"private": true,
+	"version": "0.1.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc && vite build",
+		"preview": "vite preview",
+		"tauri": "tauri",
+		"lint": "biome lint src",
+		"format": "biome check --write",
+		"db:generate": "drizzle-kit generate",
+		"db:seed": "tsx src/db/seed.ts"
+	},
+	"dependencies": {
+		"@libsql/client": "^0.15.9",
+		"@tauri-apps/api": "^2",
+		"@tauri-apps/plugin-opener": "^2",
+		"@tauri-apps/plugin-sql": "~2.2.1",
+		"drizzle-orm": "^0.44.2",
+		"drizzle-seed": "^0.3.1",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-syntax-highlighter": "^15.6.1",
+		"tsx": "^4.20.3"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.0.4",
+		"@tauri-apps/cli": "^2",
+		"@types/react": "^18.3.1",
+		"@types/react-dom": "^18.3.1",
+		"@types/react-syntax-highlighter": "^15.5.13",
+		"@vitejs/plugin-react": "^4.3.4",
+		"drizzle-kit": "^0.31.1",
+		"typescript": "~5.6.2",
+		"vite": "^6.0.3"
+	}
+}

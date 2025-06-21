@@ -1,0 +1,79 @@
+.code-runner {
+	background: #1e1e1e;
+	color: white;
+	border-radius: 8px;
+	overflow: hidden;
+	margin-bottom: 2rem;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.code-runner-title {
+	font-size: 1.25rem;
+	font-weight: bold;
+	padding: 12px 16px;
+	border-bottom: 1px solid #333;
+}
+
+.code-runner-body {
+	display: flex;
+	flex-direction: column;
+}
+
+@media (min-width: 768px) {
+	.code-runner-body {
+		flex-direction: row;
+	}
+}
+
+.code-runner-code,
+.code-runner-output {
+	padding: 16px;
+	flex: 1;
+	border-top: 1px solid #333;
+}
+
+@media (min-width: 768px) {
+	.code-runner-code {
+		border-right: 1px solid #333;
+		border-top: none;
+	}
+}
+
+.code-runner-button {
+	margin-top: 12px;
+	padding: 6px 12px;
+	font-size: 0.9rem;
+	background: #2563eb;
+	border: none;
+	border-radius: 4px;
+	color: white;
+	cursor: pointer;
+}
+
+.code-runner-button:hover {
+	background: #1d4ed8;
+}
+
+.output-label {
+	font-size: 0.9rem;
+	color: #aaa;
+	margin-bottom: 8px;
+}
+
+.output-error {
+	background: #4b1c1c;
+	padding: 12px;
+	border-radius: 4px;
+	color: #f88;
+	font-size: 0.9rem;
+}
+
+.output-json {
+	font-size: 0.85rem;
+	background: #2d2d2d;
+	padding: 12px;
+	border-radius: 4px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	word-break: break-word;
+}
