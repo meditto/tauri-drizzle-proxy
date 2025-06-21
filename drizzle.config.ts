@@ -5,5 +5,5 @@ export default defineConfig({
 	schema: "./src/db/schema",
 	out: "./src-tauri/migrations",
 	verbose: false,
-	strict: true,
+	strict: true
 });

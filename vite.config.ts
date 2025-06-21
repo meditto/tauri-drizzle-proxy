@@ -20,18 +20,18 @@ export default defineConfig(async () => ({
 			? {
 					protocol: "ws",
 					host,
-					port: 1421,
+					port: 1421
 				}
 			: undefined,
 		watch: {
 			// 3. tell vite to ignore watching `src-tauri`
-			ignored: ["**/src-tauri/**"],
-		},
+			ignored: ["**/src-tauri/**"]
+		}
 	},
 
 	resolve: {
 		alias: {
-			"@": "/src",
-		},
-	},
+			"@": "/src"
+		}
+	}
 }));
