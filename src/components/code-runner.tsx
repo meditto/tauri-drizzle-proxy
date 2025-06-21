@@ -1,7 +1,7 @@
+import "../styles/code-runner.css";
 import { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
 import { oneDark } from "react-syntax-highlighter/dist/esm/styles/prism";
-import "../styles/code-runner.css";
 
 interface CodeRunnerProps {
 	title: string;
@@ -12,6 +12,7 @@ interface CodeRunnerProps {
 export function CodeRunner({ title, code, onRun }: CodeRunnerProps) {
 	const [isRunning, setIsRunning] = useState(false);
 	const [output, setOutput] = useState<string | null>(null);
+	const [_outputs, _setOutputs] = useState<string | null>(null);
 
 	async function handleRun() {
 		setIsRunning(true);

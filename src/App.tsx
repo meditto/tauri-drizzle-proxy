@@ -1,4 +1,4 @@
-import "./App.css";
+import "./app.css";
 import { useEffect } from "react";
 import { CodeRunner } from "@/components/code-runner";
 import db from "@/db/database";

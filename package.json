@@ -9,6 +9,7 @@
 		"preview": "vite preview",
 		"tauri": "tauri",
 		"lint": "biome lint ./src",
+		"lint:fix": "biome lint ./src --write",
 		"format": "biome format ./src --write",
 		"db:generate": "drizzle-kit generate",
 		"db:seed": "tsx src/db/seed.ts"
