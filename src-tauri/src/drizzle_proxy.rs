@@ -108,7 +108,7 @@ fn sqlx_value_to_json(row: &SqliteRow, index: usize) -> Value {
             .unwrap_or(Value::Null),
         "TEXT" => row
             .try_get::<String, _>(index)
-            .and_then(|text| serde_json::from_str(&text).or(Ok(Value::String(text))))
+            .map(Value::String)
             .unwrap_or(Value::Null),
         "BLOB" => row
             .try_get::<Vec<u8>, _>(index)
@@ -116,12 +116,7 @@ fn sqlx_value_to_json(row: &SqliteRow, index: usize) -> Value {
             .unwrap_or(Value::Null),
         _ => row
             .try_get::<String, _>(index)
-            .ok()
-            .and_then(|text| {
-                serde_json::from_str(&text)
-                    .ok()
-                    .or(Some(Value::String(text)))
-            })
+            .map(Value::String)
             .unwrap_or(Value::Null),
     }
 }
